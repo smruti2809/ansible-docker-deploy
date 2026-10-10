@@ -13,8 +13,12 @@
         that:
           - "'Docker version' in docker_version.stdout"
 
-    - name: Check docker service is active
-      ansible.builtin.command: systemctl is-active docker
+        - name: Get docker service state
+      ansible.builtin.systemd:
+        name: docker
       register: docker_status
-      changed_when: false
-      failed_when: docker_status.stdout != "active"
+
+    - name: Assert docker service is active
+      ansible.builtin.assert:
+        that:
+          - docker_status.status.ActiveState == "active"

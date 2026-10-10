@@ -1,7 +1,7 @@
 services:
   webapp:
-    image: "{{ webapp_image }}"
-    container_name: "{{ webapp_container_name }}"
+    image: "{{ webapp_deploy_image }}"
+    container_name: "{{ webapp_deploy_container_name }}"
     restart: unless-stopped
     ports:
-      - "{{ webapp_host_port }}:{{ webapp_container_port }}"
+      - "{{ webapp_deploy_host_port }}:{{ webapp_deploy_container_port }}"

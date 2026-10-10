@@ -3,8 +3,8 @@
 docker_compose_plugin_version: "latest"
 
 # webapp_deploy role
-webapp_image: "nginxdemos/hello:latest"
-webapp_container_name: "d-webapp"
-webapp_host_port: 8080
-webapp_container_port: 80
+webapp_deploy_image: "nginxdemos/hello:latest"
+webapp_deploy_container_name: "d-webapp"
+webapp_deploy_host_port: 8080
+webapp_deploy_container_port: 80
 webapp_deploy_dir: "/opt/d-webapp"
